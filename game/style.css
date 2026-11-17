@@ -1,0 +1,40 @@
+/* Port Solace — page shell. The game itself is drawn entirely on the
+   canvas; this sheet only sets the dark room the canvas sits in and keeps
+   the stage centered at its native 1280x800 (8:5) ratio. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 50% 38%, #141a26 0%, #0a0d14 62%, #05070b 100%);
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+
+#game {
+  display: block;
+  /* Fit the window, never distort: width is the smaller of the full
+     viewport width and the width the viewport height allows at 8:5. */
+  width: min(100vw, 160vh);
+  height: auto;
+  aspect-ratio: 1280 / 800;
+  background: #10131a;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(140, 170, 220, 0.12);
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
